@@ -16,7 +16,7 @@ class PromptRepo {
         'prompt': prompt,
         'style_id': '122',
         'aspect_ratio': '1:1',
-        'cfg': '5',
+        'cfg': '1',
         'seed': '1',
         'high_res_results': '1'
       };
@@ -39,6 +39,7 @@ class PromptRepo {
     } catch (e) {
       log(e.toString());
     }
+    return null;
   }
 }
 //Generate a Disney image of a princess with a prince

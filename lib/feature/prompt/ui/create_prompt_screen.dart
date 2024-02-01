@@ -25,7 +25,7 @@ class _CreatePromptScreenState extends State<CreatePromptScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Generate Images🧨"),
+        title: Text("Generate Images🚀"),
       ),
       body: BlocConsumer<PromptBloc, PromptState>(
         bloc: promptBloc,
@@ -33,10 +33,10 @@ class _CreatePromptScreenState extends State<CreatePromptScreen> {
         builder: (context, state) {
           switch (state.runtimeType) {
             case PromptGeneratingImageLoadState:
-              return const Center(child: CircularProgressIndicator());
+              return Center(child: CircularProgressIndicator());
 
             case PromptGeneratingImageErrorState:
-              return const Center(child: Text("Something went wrong"));
+              return Center(child: Text("Something went wrong"));
             case PromptGeneratingImageSuccessState:
               final successState = state as PromptGeneratingImageSuccessState;
               return Container(
@@ -88,8 +88,8 @@ class _CreatePromptScreenState extends State<CreatePromptScreen> {
                                         prompt: controller.text));
                                   }
                                 },
-                                icon: const Icon(Icons.generating_tokens),
-                                label: const Text("Generate")),
+                                icon: Icon(Icons.generating_tokens),
+                                label: Text("Generate")),
                           )
                         ],
                       ),
@@ -98,9 +98,7 @@ class _CreatePromptScreenState extends State<CreatePromptScreen> {
                 ),
               );
             default:
-              return const SizedBox(
-                child: Text("Error"),
-              );
+              return SizedBox();
           }
         },
       ),
